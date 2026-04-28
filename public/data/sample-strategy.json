@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "strategy_slug": "sample-strategy",
+  "strategy_name": "Sample Strategy (Dev)",
+  "instrument": "ES",
+  "generated_utc": "2026-04-27T10:00:00Z",
+  "summary": {
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "total_pnl_usd": 400.0,
+    "biggest_winner_usd": 400.0,
+    "biggest_loser_usd": 0.0,
+    "avg_holding_minutes": 30
+  },
+  "bars": [
+    {"time": 1733130000, "open": 4750, "high": 4760, "low": 4748, "close": 4755, "volume": 100},
+    {"time": 1733130060, "open": 4755, "high": 4762, "low": 4753, "close": 4760, "volume": 120},
+    {"time": 1733130120, "open": 4760, "high": 4765, "low": 4758, "close": 4763, "volume": 110},
+    {"time": 1733130180, "open": 4763, "high": 4768, "low": 4760, "close": 4766, "volume": 130},
+    {"time": 1733130240, "open": 4766, "high": 4770, "low": 4762, "close": 4769, "volume": 115}
+  ],
+  "trades": [
+    {
+      "trade_id": 1,
+      "entry_time": 1733130060,
+      "exit_time": 1733130180,
+      "side": "Long",
+      "entry_price": 4755,
+      "exit_price": 4766,
+      "stop_price": 4748,
+      "target_price": 4775,
+      "qty": 1,
+      "pnl_usd": 400.0,
+      "rr_achieved": 1.6,
+      "regime_at_entry": "Full Bull",
+      "context_start_idx": 0,
+      "context_end_idx": 4
+    }
+  ]
+}
