@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import {
   createChart, CandlestickSeries, IChartApi, ISeriesApi,
   UTCTimestamp,
+  createSeriesMarkers,
 } from 'lightweight-charts';
 import { Bar, Trade } from '@/lib/types';
 
@@ -61,10 +62,8 @@ export default function TradeChart({ bars, trades, selectedTradeId }: Props) {
       },
     ]).sort((a, b) => (a.time as number) - (b.time as number));
 
-    // Lightweight Charts v5: setMarkers moved to primitives plugin.
-    // Cast to any for compatibility — markers may not render at runtime.
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (series as any).setMarkers?.(markers);
+    // Lightweight Charts v5: markers via createSeriesMarkers (main export).
+    createSeriesMarkers(series, markers);
 
     const onResize = () => {
       if (containerRef.current) chart.applyOptions({ width: containerRef.current.clientWidth });
